@@ -355,18 +355,29 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-// --- 7. DIAGNOSTIC LOGIN & ERROR TRACKER ---
-client.on('debug', (info) => {
-    if (info.includes('Hit a 429') || info.includes('Provided token') || info.includes('Connecting')) {
-        console.log(`🔍 [Discord Debug]: ${info}`);
-    }
-});
+// --- 7. FULL DIAGNOSTIC LOGIN & GATEWAY TRACKER ---
+client.on('debug', (info) => console.log(`🔍 [Debug]: ${info}`));
+client.on('warn', (info) => console.log(`⚠️ [Warn]: ${info}`));
 client.on('error', (err) => console.error('❌ [Client Error]:', err));
 
-const rawToken = process.env.DISCORD_TOKEN || '';
-const cleanToken = rawToken.replace(/^=+/, '').trim(); // Aage laga '=' ya space apne aap hata dega
+client.rest.on('rateLimited', (info) => {
+    console.log(`🚫 [DISCORD RATE LIMIT!]: Blocked for ${info.timeToReset}ms on route ${info.route}`);
+});
 
-console.log(`⏳ Trying to login to Discord... (Token Present: ${cleanToken.length > 0 ? 'YES, Length: ' + cleanToken.length : 'NO!'})`);
+const rawToken = process.env.DISCORD_TOKEN || '';
+const cleanToken = rawToken.replace(/^=+/, '').trim();
+
+console.log(`⏳ Trying to login to Discord... (Token Length: ${cleanToken.length})`);
+
+// Check connection to Discord API directly before login
+fetch('https://discord.com/api/v10/gateway/bot', {
+    headers: { Authorization: `Bot ${cleanToken}` }
+})
+.then(async (res) => {
+    const text = await res.text();
+    console.log(`🌐 [Discord API Check] Status: ${res.status} | Response: ${text.slice(0, 150)}`);
+})
+.catch((err) => console.error('❌ [API Fetch Error]:', err));
 
 client.login(cleanToken)
     .then(() => console.log('✅ Login request accepted by Discord!'))
