@@ -355,4 +355,19 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login(process.env.DISCORD_TOKEN);
+// --- 7. DIAGNOSTIC LOGIN & ERROR TRACKER ---
+client.on('debug', (info) => {
+    if (info.includes('Hit a 429') || info.includes('Provided token') || info.includes('Connecting')) {
+        console.log(`🔍 [Discord Debug]: ${info}`);
+    }
+});
+client.on('error', (err) => console.error('❌ [Client Error]:', err));
+
+const rawToken = process.env.DISCORD_TOKEN || '';
+const cleanToken = rawToken.replace(/^=+/, '').trim(); // Aage laga '=' ya space apne aap hata dega
+
+console.log(`⏳ Trying to login to Discord... (Token Present: ${cleanToken.length > 0 ? 'YES, Length: ' + cleanToken.length : 'NO!'})`);
+
+client.login(cleanToken)
+    .then(() => console.log('✅ Login request accepted by Discord!'))
+    .catch((err) => console.error('❌ Discord Login Error:', err));
