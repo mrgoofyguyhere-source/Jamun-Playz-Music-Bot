@@ -1,25 +1,72 @@
 {
   "lofi": [
     "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-    "Indian lofi chill beats"
+    "https://www.youtube.com/watch?v=5qap5aO4i9A",
+    "https://www.youtube.com/watch?v=DWcJFNfaw9c"
   ],
   "bollywood": [
-    "Kesariya Brahmāstra song",
+    "Kesariya Brahmāstra",
+    "Tum Hi Ho Aashiqui 2",
     "Apna Bana Le Bhediya",
-    "Tum Se Hi Jab We Met"
+    "Chaleya Jawan",
+    "Raataan Lambiyan Shershaah",
+    "Kabira Yeh Jawaani Hai Deewani"
   ],
   "punjabi": [
     "295 Sidhu Moose Wala",
     "Softly Karan Aujla",
-    "Lover Diljit Dosanjh"
+    "Lover Diljit Dosanjh",
+    "Brown Munde AP Dhillon",
+    "Excuses AP Dhillon",
+    " GOAT Diljit Dosanjh"
   ],
-  "hollywood": [
-    "Blinding Lights The Weeknd",
-    "Starboy The Weeknd",
-    "Believer Imagine Dragons"
+  "gaming": [
+    "Alan Walker Faded",
+    "Cartoon On & On NCS",
+    "Sub Urban Cradles",
+    "TheFatRat Unity",
+    "KDA POP STARS",
+    "Imagine Dragons Believer"
   ],
-  "hindi": [
-    "Kun Faya Kun Rockstar",
-    "Agar Tum Saath Ho"
+  "phonk": [
+    "KORDHELL MURDER IN MY MIND",
+    "INTERWORLD METAMORPHOSIS",
+    "DVRST CLOSE EYES",
+    "Hensonn Sahara",
+    "g3ox_em GigaChad Theme"
+  ],
+  "pop": [
+    "The Weeknd Blinding Lights",
+    "Ed Sheeran Shape of You",
+    "Harry Styles As It Was",
+    "Post Malone Circles",
+    "Dua Lipa Levitating"
+  ],
+  "hiphop": [
+    "Travis Scott FE!N",
+    "Drake God's Plan",
+    "Eminem Lose Yourself",
+    "Kendrick Lamar HUMBLE",
+    "21 Savage redrum"
+  ],
+  "workout": [
+    "Eminem Till I Collapse",
+    "Kanye West Stronger",
+    "NEFFEX Fight Back",
+    "Survivor Eye of the Tiger",
+    "Linkin Park In The End"
+  ],
+  "chill": [
+    "Joji Glimpse of Us",
+    "The Neighbourhood Sweater Weather",
+    "Glass Animals Heat Waves",
+    "Billie Eilish lovely",
+    "Coldplay Yellow"
+  ],
+  "90s_hits": [
+    "Chaiyya Chaiyya Dil Se",
+    "Tujhe Dekha To Dilwale Dulhania Le Jayenge",
+    "Pehla Nasha Jo Jeeta Wohi Sikandar",
+    "Tip Tip Barsa Paani Mohra"
   ]
 }
